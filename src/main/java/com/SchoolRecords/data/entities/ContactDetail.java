@@ -11,7 +11,8 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @Getter
 @Setter
-public class ContactDetail extends AbstractUniqueEntity {
+public class ContactDetail extends AbstractUniqueEntity
+{
 
     @Column(name = "PHONE_NUMBER")
     private String phoneNumber;

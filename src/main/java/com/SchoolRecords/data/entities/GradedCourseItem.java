@@ -5,7 +5,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "T_GRADED_COURSE_ITEM")
-public class GradedCourseItem extends AbstractUniqueEntity {
+public class GradedCourseItem extends AbstractUniqueEntity
+{
 
     @Column(name = "PERCENTAGE")
     int percentage;

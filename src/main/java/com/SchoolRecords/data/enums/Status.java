@@ -1,6 +1,7 @@
 package com.SchoolRecords.data.enums;
 
-public enum Status {
+public enum Status
+{
     CREATED,
     ACTIVE,
     FINAL

@@ -1,7 +1,7 @@
 package com.SchoolRecords.data.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.SchoolRecords.data.enums.Role;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -9,7 +9,9 @@ import javax.persistence.*;
 @Table(name = "T_PERSON")
 @Getter
 @Setter
-public class Person extends AbstractUniqueEntity {
+@NoArgsConstructor
+public class Person extends AbstractUniqueEntity
+{
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "PERSONAL_DETAIL_ID", referencedColumnName = "ID")
@@ -29,4 +31,13 @@ public class Person extends AbstractUniqueEntity {
     @OneToOne(mappedBy = "person")
     private Student student;
 
+    @OneToOne(mappedBy = "person")
+    private Admin admin;
+
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "ROLE")
+    private Role role;
+
+    @OneToOne(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private User user;
 }

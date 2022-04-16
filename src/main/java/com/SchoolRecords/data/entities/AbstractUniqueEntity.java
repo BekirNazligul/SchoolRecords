@@ -10,12 +10,13 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 @Getter
-public class AbstractUniqueEntity {
+public class AbstractUniqueEntity
+{
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid")
-    @Column(name = "ID")
+    @Column(name = "ID", unique = true)
     private String id;
 
 }

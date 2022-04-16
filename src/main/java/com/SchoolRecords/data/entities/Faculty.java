@@ -5,7 +5,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "T_FACULTY")
-public class Faculty extends AbstractUniqueEntity {
+public class Faculty extends AbstractUniqueEntity
+{
 
     @Column(name = "NAME")
     private String name;

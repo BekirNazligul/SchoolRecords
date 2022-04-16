@@ -12,7 +12,8 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @Getter
 @Setter
-public class CourseGrade extends AbstractUniqueEntity {
+public class CourseGrade extends AbstractUniqueEntity
+{
 
     @ManyToOne
     @JoinColumn(name = "STUDENT_ID")

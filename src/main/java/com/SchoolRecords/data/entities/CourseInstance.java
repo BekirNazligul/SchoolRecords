@@ -11,7 +11,8 @@ import java.util.List;
 @Table(name = "T_COURSE_INSTANCE")
 @Getter
 @Setter
-public class CourseInstance extends AbstractUniqueEntity {
+public class CourseInstance extends AbstractUniqueEntity
+{
 
     @ManyToOne
     @JoinColumn(name = "COURSE")

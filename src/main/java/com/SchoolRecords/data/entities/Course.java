@@ -10,7 +10,8 @@ import java.util.List;
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class Course extends AbstractUniqueEntity {
+public class Course extends AbstractUniqueEntity
+{
 
     @Column(name = "CODE")
     private String code;
