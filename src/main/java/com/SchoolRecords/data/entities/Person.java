@@ -40,4 +40,9 @@ public class Person extends AbstractUniqueEntity
 
     @OneToOne(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private User user;
+
+    public String getName()
+    {
+        return personalDetail.getFirstName() + " " + personalDetail.getLastName();
+    }
 }

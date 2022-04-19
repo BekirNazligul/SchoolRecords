@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Instructor Main Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+    <p>Hello <span th:text="${firstName}"></span>, what do you wish to do today?</p>
+
+    <p> <b>This page is a WIP!</b></p>
+</div>
+
+<div>
+    <table class="table table-striped table-bordered table-hover">
+        <tr th:each="page: ${pages}">
+        <td>
+            <a th:href="${page.url}" th:text="${page.description}" target="_blank"></a>
+        </td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <a href="/logout">Logout</a>
+</div>
+</body>
+</html>
