@@ -1,7 +1,6 @@
 package com.SchoolRecords.controllers;
 
 import com.SchoolRecords.controllers.model.PageDefinition;
-import com.SchoolRecords.data.enums.Role;
 import com.SchoolRecords.services.userdetailsservice.model.CustomUserDetail;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Controller;
@@ -20,7 +19,7 @@ public class HomePageController
     {
         CustomUserDetail userDetail = (CustomUserDetail) principal.getPrincipal();
         model.addAttribute("firstName", userDetail.getUser().getPerson().getPersonalDetail().getFirstName());
-        model.addAttribute("pages", PageDefinition.filterPagesByRoles(Collections.singletonList(Role.ADMIN)));
+        model.addAttribute("pages", PageDefinition.filterPagesOnMainByRoles(Collections.singletonList(userDetail.getUser().getPerson().getRole())));
         return "home";
     }
 }
