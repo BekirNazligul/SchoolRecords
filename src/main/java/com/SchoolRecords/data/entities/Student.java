@@ -1,6 +1,7 @@
 package com.SchoolRecords.data.entities;
 
 
+import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Table(name = "T_STUDENT")
 @Setter
+@Getter
 @ToString
 public class Student extends AbstractUniqueEntity
 {
@@ -18,11 +20,14 @@ public class Student extends AbstractUniqueEntity
     @JoinColumn(name = "PERSON_ID")
     private Person person;
 
-    @Column(name = "STUDENT_NUMBER")
+    @Column(name = "STUDENT_NUMBER", unique = true)
     private long studentNumber;
 
     @Column(name = "ENROLLMENT_DATE")
     private String enrollmentDate;
+
+    @Column(name = "GPA")
+    private String gpa;
 
     @ManyToOne
     @JoinColumn(name = "PROGRAM_ID")

@@ -12,6 +12,7 @@ public enum PageDefinition
 {
     PERSONAL_INFORMATION("Manage your personal information", "/personalDetail", Set.of(Role.ALL), true),
     CONTACT_INFORMATION("Manage your contact information", "/contactDetail",Set.of(Role.ALL), true),
+    STUDENT_MANAGEMENT("Manage students", "/studentManagement", Set.of(Role.ADMIN), true),
     COURSE_MANAGEMENT("Manage your courses", "/courses", Set.of(Role.INSTRUCTOR), true),
     GRADE_DISPLAY("Display current grades", "/grades", Set.of(Role.STUDENT), true),
     USER_EDIT("Manage your login info", "/user", Set.of(Role.ALL),true);

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Manage Students</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:if="${param.displayMessage}">
+    <span th:text="${displayMessage}"></span>
+</div>
+<div>
+    <a>Search for a Student: </a>
+    <form action="#" th:action="@{/studentManagement/search}" method="post">
+        <p>Id: <input type="text" th:field="${studentNumber}" /></p>
+        <button type="submit" name="action" value="search">Search</button>
+        <p>Or</p>
+        <button type="submit" name="action" value="new">Create New</button>
+    </form>
+</div>
+
+<div th:if="${param.new != null || param.student != null}">
+    <form action="#" th:action="@{/studentManagement/saveStudent}" th:object="${studentInfo}" method="post">
+        <p>Name: <input type="text" th:field="*{firstName}"/></p>
+        <p>Name: <input type="text" th:field="*{lastName}" /></p>
+        <p>Name: <input type="text" th:field="*{studentNumber}" /></p>
+        <p>Name: <input type="text" th:field="*{email}" /></p>
+        <p>Name: <input type="text" th:field="*{enrolledProgram}" /></p>
+        <p>Name: <input type="text" th:field="*{year}" /></p>
+    </form>
+</div>
+
+</body>
+</html>
